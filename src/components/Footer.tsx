@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { Box, Container, Typography } from '@material-ui/core';
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
     return (
         <Container maxWidth="xl">
             <Box py={3} minHeight={60}>

@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 import { Box, Button, Container, Typography } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { Link } from 'react-router-dom';
 
-const NotFoundScreen = () => {
+const NotFoundScreen: FC = () => {
     return (
         <Container maxWidth="xl">
             <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" py={8}>

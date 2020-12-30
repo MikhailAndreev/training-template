@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Settings } from 'luxon';
 import { configure } from 'mobx';
@@ -22,14 +22,14 @@ configure({ enforceActions: 'observed' });
 // }
 
 ReactDOM.render(
-    <React.StrictMode>
+    <StrictMode>
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Router>
                 <App />
             </Router>
         </ThemeProvider>
-    </React.StrictMode>,
+    </StrictMode>,
     document.getElementById('root'),
 );
 

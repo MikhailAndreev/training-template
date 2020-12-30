@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Box, CircularProgress, Grid, makeStyles, useTheme } from '@material-ui/core';
 
 interface ILoaderProps {
@@ -8,7 +8,7 @@ interface ILoaderProps {
     color?: string;
 }
 
-const Loader: React.FC<ILoaderProps> = ({ size = 40, minHeight = 0, isAbsolute = false, color }) => {
+const Loader: FC<ILoaderProps> = ({ size = 40, minHeight = 0, isAbsolute = false, color }) => {
     const classes = useStyles();
     const theme = useTheme();
 
