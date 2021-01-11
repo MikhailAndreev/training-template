@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { IRequestResponse } from '../types/CommonTypes';
 import { showNotification } from '../utils/showNotification';
 import { _tokenStorageKey } from '../stores/AuthStore';
@@ -65,11 +65,19 @@ axios.interceptors.response.use(
     },
 );
 
-class API {
-    get = (apiUrl: string) => axios.get<IRequestResponse>(apiUrl);
-    post = (apiUrl: string, data: any) => axios.post<IRequestResponse>(apiUrl, data);
-    put = (apiUrl: string, data: any) => axios.put<IRequestResponse>(apiUrl, data);
-    delete = (apiUrl: string) => axios.delete<IRequestResponse>(apiUrl);
+class API<U extends string, C extends AxiosRequestConfig> {
+    get = <T extends {}>(apiUrl: U, config?: C): Promise<AxiosResponse<IRequestResponse<T>>> => {
+        return axios.get<IRequestResponse<T>>(apiUrl, config);
+    };
+    post = <T extends {}, D extends {}>(apiUrl: U, data: D, config?: C): Promise<AxiosResponse<IRequestResponse<T>>> => {
+        return axios.post<IRequestResponse<T>>(apiUrl, data, config);
+    };
+    put = <T extends {}, D extends {}>(apiUrl: U, data: D): Promise<AxiosResponse<IRequestResponse<T>>> => {
+        return axios.put<IRequestResponse<T>>(apiUrl, data);
+    };
+    delete = <T extends {}>(apiUrl: U): Promise<AxiosResponse<IRequestResponse<T>>> => {
+        return axios.delete<IRequestResponse<T>>(apiUrl);
+    };
 
     setToken = (token: string) => {
         axios.defaults.headers['Access-Token'] = token;
