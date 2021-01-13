@@ -3,11 +3,11 @@ export type Nullable<T> = T | null;
 // export type SortOrders = 'asc' | 'desc';
 
 // Axios request
-export interface IRequestResponse {
+export interface IRequestResponse<T> {
     success: boolean;
     errors: [] | null;
     message: string | null;
-    data: any;
+    data: T;
 }
 
 // useParam hook

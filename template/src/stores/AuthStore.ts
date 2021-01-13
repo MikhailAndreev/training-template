@@ -1,6 +1,6 @@
 import { observable, action, makeAutoObservable, runInAction } from 'mobx';
 import { api } from '../api';
-import { ILoginValues } from '../types/AuthTypes';
+import { ILoginResponse, ILoginValues } from '../types/AuthTypes';
 import { showNotification } from '../utils/showNotification';
 
 export const _tokenStorageKey = '_projectNameAccessToken';
@@ -24,10 +24,10 @@ export class AuthStore {
     login = (values: ILoginValues, history: any) => {
         this.loading = true;
 
-        api.post('/auth/login', values)
-            .then(response => {
-                if (response.data.success) {
-                    const token = response.data.data.accessToken;
+        api.post<ILoginResponse, ILoginValues>('/auth/login', values)
+            .then(({ data }) => {
+                if (data.success) {
+                    const token = data.data.accessToken;
 
                     // Set token
                     api.setToken(token);
