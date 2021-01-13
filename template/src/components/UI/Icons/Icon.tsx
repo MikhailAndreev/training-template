@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
 
 interface IIconProps extends SvgIconProps {
@@ -9,10 +9,8 @@ interface IIconProps extends SvgIconProps {
     };
 }
 
-const Icon: React.FC<IIconProps> = props => {
+export const Icon: FC<IIconProps> = props => {
     const { size, component } = props;
 
     return <SvgIcon viewBox={`0 0 ${size.width} ${size.height}`} component={component} {...props} style={size}></SvgIcon>;
 };
-
-export default Icon;

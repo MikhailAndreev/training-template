@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { Container, Typography } from '@material-ui/core';
 
-const MainScreen: React.FC = () => {
+const MainScreen: FC = () => {
     return (
         <Container maxWidth="xl">
             <Typography variant="h2">Стартовый шаблон CRA</Typography>

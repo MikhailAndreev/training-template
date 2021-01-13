@@ -1,8 +1,9 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Settings } from 'luxon';
 import { configure } from 'mobx';
 import { BrowserRouter as Router } from 'react-router-dom';
+// import * as Sentry from '@sentry/browser';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -15,19 +16,24 @@ Settings.defaultLocale = 'ru';
 // StrictMode для Mobx
 configure({ enforceActions: 'observed' });
 
+// Sentry для продакшна, отлавливает ошибки приложения, включается перед публикацией
+// if (process.env.NODE_ENV === 'production') {
+//     Sentry.init({ dsn: 'project_dsn_link' });
+// }
+
 ReactDOM.render(
-    <React.StrictMode>
+    <StrictMode>
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Router>
                 <App />
             </Router>
         </ThemeProvider>
-    </React.StrictMode>,
+    </StrictMode>,
     document.getElementById('root'),
 );
 
-// Помогает при верстке, после можно отключить, так как при интеграции с апи может помещать
+// Помогает при верстке, после можно отключить, так как при интеграции с апи может помешать
 if (module.hot) {
     module.hot.accept();
 }
