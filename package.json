@@ -1,63 +1,29 @@
 {
-    "name": "web-cra-template",
-    "version": "0.1.0",
-    "author": "Hatam Soyunov",
-    "private": true,
-    "dependencies": {
-        "@material-ui/core": "^4.11.0",
-        "@material-ui/icons": "^4.9.1",
-        "@material-ui/lab": "^4.0.0-alpha.56",
-        "@testing-library/jest-dom": "^5.11.4",
-        "@testing-library/react": "^11.1.0",
-        "@testing-library/user-event": "^12.1.10",
-        "@types/jest": "^26.0.15",
-        "@types/luxon": "^1.25.0",
-        "@types/node": "^12.0.0",
-        "@types/query-string": "^6.3.0",
-        "@types/react": "^16.9.53",
-        "@types/react-dom": "^16.9.8",
-        "@types/react-notifications-component": "^2.4.0",
-        "@types/react-router-dom": "^5.1.5",
-        "@types/webpack-env": "^1.16.0",
-        "axios": "^0.20.0",
-        "camelize": "^1.0.0",
-        "clsx": "^1.1.1",
-        "lodash": "^4.17.20",
-        "luxon": "^1.25.0",
-        "mobx": "^6.0.1",
-        "mobx-react": "^6.3.0",
-        "mobx-react-lite": "^2.2.2",
-        "node-sass": "^4.14.1",
-        "query-string": "^6.13.7",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
-        "react-notifications-component": "^2.4.1",
-        "react-router-dom": "^5.2.0",
-        "react-scripts": "4.0.1",
-        "typescript": "^4.0.3",
-        "unescape": "^1.0.1",
-        "web-vitals": "^0.2.4"
+    "name": "cra-template-typescript",
+    "version": "1.1.1",
+    "description": "Neti web apps template",
+    "files": [
+        "template",
+        "template.json"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.netimob.com/develop/cra-template-neti.git"
     },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build"
+    "keywords": [
+        "react",
+        "create-react-app",
+        "template",
+        "typescript",
+        "neti",
+        "web"
+    ],
+    "author": "Hatam Soyunov <ksoyunov@i-neti.ru>",
+    "license": "MIT",
+    "engines": {
+        "node": ">=10"
     },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+    "bugs": {
+        "url": "https://gitlab.netimob.com/develop/cra-template-neti/-/issues"
     }
 }
