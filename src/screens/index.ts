@@ -1,3 +1,5 @@
-export { default as MainScreen } from './MainScreen';
-export { default as NotFoundScreen } from './NotFoundScreen';
-export { default as SecretScreen } from './SecretScreen';
+// Screens
+import MainScreen from './MainScreen';
+import NotFoundScreen from './NotFoundScreen';
+
+export const screens = { MainScreen, NotFoundScreen };

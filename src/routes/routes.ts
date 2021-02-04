@@ -1,25 +1,19 @@
-import * as screens from '../screens';
+import { screens } from '../screens';
 import { RoutesType } from '../types/RouteTypes';
-import { roles, EVERYBODY } from './roles';
 
-export const routes: RoutesType = {
+export const SITE_NAME = 'Start template Neti';
+
+type RoutesKeys = keyof typeof screens;
+export const routes: RoutesType<RoutesKeys> = {
   MainScreen: {
     path: '/',
-    label: 'Главная',
-    credentials: EVERYBODY,
-    component: screens.MainScreen,
-  },
-  SecretScreen: {
-    path: '/secret-page',
     exact: true,
-    label: 'Секретная страница',
-    credentials: [roles.director],
-    component: screens.SecretScreen,
+    label: 'Главная',
+    component: screens.MainScreen,
   },
   NotFoundScreen: {
     path: '/not-found',
     label: '404 Страница не найдена',
-    credentials: EVERYBODY,
     component: screens.NotFoundScreen,
   },
 };

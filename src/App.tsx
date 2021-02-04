@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import { routes } from './routes/routes';
-import RootComponent from './components/RootComponent';
+import Routes from './components/Routes';
 import Loader from './components/UI/Loader';
 
 const App: FC = observer(() => {
@@ -25,7 +25,7 @@ const App: FC = observer(() => {
     <>
       <Header />
 
-      <RootComponent routes={routes} />
+      <Routes routes={routes} />
 
       <Footer />
 

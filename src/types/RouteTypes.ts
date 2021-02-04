@@ -1,4 +1,3 @@
-import * as screens from '../screens';
 import { RouteProps } from 'react-router-dom';
 import roles from '../routes/roles';
 
@@ -7,19 +6,14 @@ export interface IRole {
   role: string;
   label: string;
 }
-
 export type RoleKeys = keyof typeof roles;
 export type Roles = Record<RoleKeys, IRole>;
 
 // Routes
-export type routesKeys = keyof typeof screens;
-export type RoutesType = Record<routesKeys, IRoute>;
-
+export type RoutesType<T extends string> = Record<T, IRoute>;
 export interface IRoute extends RouteProps {
-  param?: string;
   path: string;
   label: string;
-  visibleInHeader?: boolean;
-  credentials: IRole[];
+  credentials?: IRole[];
   props?: any;
 }
