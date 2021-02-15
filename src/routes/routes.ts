@@ -4,6 +4,7 @@ import { RoutesType } from '../types/RouteTypes';
 export const SITE_NAME = 'Start template Neti';
 
 type RoutesKeys = keyof typeof screens;
+
 export const routes: RoutesType<RoutesKeys> = {
   MainScreen: {
     path: '/',
