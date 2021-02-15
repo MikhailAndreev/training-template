@@ -1,37 +1,37 @@
-import { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { Switch, Route, Redirect } from 'react-router-dom';
-// import ReactNotification from 'react-notifications-component';
-// import 'react-notifications-component/dist/theme.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// Screens
-import NotFoundScreen from './screens/NotFoundScreen';
-import MainScreen from './screens/MainScreen';
+import { routes } from './routes/routes';
+import Routes from './components/Routes';
+import Loader from './components/UI/Loader';
 
 const App: FC = observer(() => {
-    return (
-        <>
-            <Header />
+  const [profileLoading, setProfileLoading] = useState(true);
 
-            <main>
-                <Switch>
-                    <Route exact path="/" component={MainScreen} />
+  useEffect(() => {
+    setTimeout(() => {
+      setProfileLoading(false);
+    }, 1000);
+  }, []);
 
-                    <Route path="/not-found" component={NotFoundScreen} />
-                    <Route path="*">
-                        <Redirect to="/not-found" />
-                    </Route>
-                </Switch>
-            </main>
+  if (profileLoading) {
+    return <Loader minHeight="100vh" />;
+  }
 
-            <Footer />
+  return (
+    <>
+      <Header />
 
-            {/* <ReactNotification /> */}
-        </>
-    );
+      <Routes routes={routes} />
+
+      <Footer />
+
+      {/* <ReactNotification /> */}
+    </>
+  );
 });
 
 export default App;
