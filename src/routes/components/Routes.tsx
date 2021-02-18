@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { SITE_NAME } from '../routes/routes';
+import { SITE_NAME } from '../routes';
 
-import { IRole, IRoute, RoleKeys } from '../types/RouteTypes';
+import { IRole, IRoute, RoleKeys } from '../../types/RouteTypes';
 
 interface IRoutes {
   [key: string]: IRoute;

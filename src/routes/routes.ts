@@ -14,6 +14,7 @@ export const routes: RoutesType<RoutesKeys> = {
     label: 'Главная',
     component: screens.MainScreen,
   },
+
   NotFoundScreen: {
     path: '/not-found',
     label: '404 Страница не найдена',

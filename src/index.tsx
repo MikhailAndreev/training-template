@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { theme } from './styles/MuiTheme';
 
-// Установка локализации по умолчанию Luxon
+// Установка локализации по умолчанию - Luxon
 Settings.defaultLocale = 'ru';
 
 // StrictMode для Mobx
@@ -22,20 +22,20 @@ configure({ enforceActions: 'observed' });
 // }
 
 ReactDOM.render(
-    <StrictMode>
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Router>
-                <App />
-            </Router>
-        </ThemeProvider>
-    </StrictMode>,
-    document.getElementById('root'),
+  <StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <App />
+      </Router>
+    </ThemeProvider>
+  </StrictMode>,
+  document.getElementById('root'),
 );
 
 // Помогает при верстке, после можно отключить, так как при интеграции с апи может помешать
 if (module.hot) {
-    module.hot.accept();
+  module.hot.accept();
 }
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,25 +1,27 @@
-import { FC } from 'react';
-import { Button, ButtonProps } from '@material-ui/core';
+import { Button, ButtonProps, useTheme } from '@material-ui/core';
+
 import Loader from './Loader';
 import { showNotification } from '../../utils/showNotification';
 
 interface ILoaderButtonProps extends ButtonProps {
-    loading: boolean;
+  loading: boolean;
 }
 
-const LoaderButton: FC<ILoaderButtonProps> = props => {
-    const handleChangeEvent = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        if (props.onClick) {
-            return !props.loading ? props.onClick(e) : showNotification('danger', 'Идёт загрузка, пожалуйста подождите...');
-        }
-    };
+const LoaderButton: React.FC<ILoaderButtonProps> = props => {
+  const { loading, variant, children, onClick, ...rest } = props;
+  const { palette } = useTheme();
 
-    return (
-        <Button {...props} onClick={handleChangeEvent}>
-            {/* If background is transparent loader is invisible */}
-            {props.loading ? <Loader size={24} color={props.variant === 'outlined' ? '#18A6F5' : '#fff'} /> : props.children}
-        </Button>
-    );
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (onClick) {
+      return loading ? showNotification('danger', 'Идёт загрузка, пожалуйста подождите...') : onClick(e);
+    }
+  };
+
+  return (
+    <Button {...rest} onClick={handleClick}>
+      {loading ? <Loader size={24} color={variant === 'outlined' ? palette.primary.main : '#fff'} /> : children}
+    </Button>
+  );
 };
 
 export default LoaderButton;

@@ -1,27 +1,26 @@
-import { FC } from 'react';
 import clsx from 'clsx';
 import { makeStyles, Button, ButtonProps, Theme } from '@material-ui/core';
 
 interface ITextButtonProps extends ButtonProps {
-    lowercase?: boolean;
+  lowercase?: boolean;
 }
 
-const TextButton: FC<ITextButtonProps> = props => {
-    const classes = useStyles();
+const TextButton: React.FC<ITextButtonProps> = ({ lowercase, children, className, ...rest }) => {
+  const classes = useStyles();
 
-    return (
-        <Button variant="text" disableRipple {...props} className={clsx(props.className, props.lowercase ? classes.lowercase : '')}>
-            {props.children}
-        </Button>
-    );
+  return (
+    <Button variant="text" disableRipple {...rest} className={clsx(className, lowercase ? classes.lowercase : '')}>
+      {children}
+    </Button>
+  );
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
-    lowercase: {
-        textTransform: 'none',
-        letterSpacing: 0,
-        fontWeight: 400,
-    },
+  lowercase: {
+    textTransform: 'none',
+    letterSpacing: 0,
+    fontWeight: 400,
+  },
 }));
 
 export default TextButton;

@@ -1,12 +1,11 @@
-import { FC } from 'react';
 import { Box, Container, Typography } from '@material-ui/core';
 
-const Header: FC = () => {
+const Header: React.FC = () => {
   return (
     <Container maxWidth="xl">
       <Box py={3}>
         <Typography>Header</Typography>
-        {/* <Link to={routes.NOT_FOUND_SCREEN.path}>{routes.NOT_FOUND_SCREEN.label}</Link> */}
+        {/* <Link to={routes.NotFoundScreen.path}>{routes.NotFoundScreen.label}</Link> */}
       </Box>
     </Container>
   );
