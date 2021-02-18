@@ -1,4 +1,4 @@
-import { RoleKeys } from '../types/RouteTypes';
+import { RoleKeys } from './types/RouteTypes';
 
 export const roles = {
   director: {

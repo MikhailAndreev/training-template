@@ -47,20 +47,20 @@ interface IConfig {
   config?: AxiosRequestConfig;
 }
 
-export interface IResponseCommon {
-  success: boolean;
-  errors: [] | null;
-  message: string | null;
-  data: any;
-}
+// export interface IResponseCommon {
+//   success: boolean;
+//   errors: [] | null;
+//   message: string | null;
+//   data: any;
+// }
 
 class ApiService {
   get = (config: IConfig) => {
-    return api.get<IResponseCommon>(config.url);
+    return api.get(config.url);
   };
 
   post = (config: IConfig) => {
-    return api.post<IResponseCommon>(config.url, config.data);
+    return api.post(config.url, config.data);
   };
 
   setAccessToken = (token: string) => {
@@ -71,6 +71,24 @@ class ApiService {
     axios.defaults.headers['Access-Token'] = null;
   };
 }
+
+// class ApiService {
+//   get = (config: IConfig) => {
+//     return api.get<IResponseCommon>(config.url);
+//   };
+
+//   post = (config: IConfig) => {
+//     return api.post<IResponseCommon>(config.url, config.data);
+//   };
+
+//   setAccessToken = (token: string) => {
+//     axios.defaults.headers['Access-Token'] = token;
+//   };
+
+//   clearAccessToken = () => {
+//     axios.defaults.headers['Access-Token'] = null;
+//   };
+// }
 
 // class ApiService {
 //   get = <T extends {}>({ url, config }: IConfig<null>): Promise<AxiosResponse<IRequestResponse<T>>> => {

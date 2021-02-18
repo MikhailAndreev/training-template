@@ -1,15 +1,12 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
 import API from '../../../services/ApiService';
-import AuthAPI from '../AuthAPI';
-import { TokenStore } from './TokenStore';
+import AuthService from '../AuthService';
 import TokenStorageService from '../../../services/TokenStorageService';
 import { ILoginValues, IRegisterValues } from '../Auth';
-import NotificationService from '../../../services/NotificationService';
 
 export class AuthStore {
-  tokenStore?: TokenStore;
-  authAPI = new AuthAPI();
+  authService = new AuthService();
 
   loading = false;
   isAuth = false;
@@ -25,20 +22,11 @@ export class AuthStore {
   register = (values: IRegisterValues) => {
     this.setLoading(true);
 
-    this.authAPI
+    this.authService
       .register(values)
       .then(({ data }) => {
         if (data?.success) {
-          if (!this.tokenStore) {
-            throw new Error('Not set tokenStore');
-          }
-          const token = data.data.accessToken;
-
-          this.tokenStore.setToken(token);
           this.setIsAuth(true);
-
-          // Redirect
-          // history.push('/');
         }
       })
       .catch(error => {
@@ -54,20 +42,11 @@ export class AuthStore {
   login = (values: ILoginValues) => {
     this.setLoading(true);
 
-    this.authAPI
+    this.authService
       .login(values)
       .then(({ data }) => {
         if (data?.success) {
-          if (!this.tokenStore) {
-            throw new Error('Not set tokenStore');
-          }
-          const token = data.data.accessToken;
-
-          this.tokenStore.setToken(token);
           this.setIsAuth(true);
-
-          // Redirect
-          // history.push('/');
         }
       })
       .catch(error => {
@@ -83,20 +62,11 @@ export class AuthStore {
   logout = () => {
     this.setLoading(true);
 
-    this.authAPI
+    this.authService
       .logout()
       .then(({ data }) => {
         if (data?.success) {
-          API.clearAccessToken();
-          TokenStorageService.deleteToken();
           this.setIsAuth(false);
-
-          // Redirect
-          // history.push('/');
-
-          if (data?.message) {
-            NotificationService.showNotif({ type: 'success', message: data.message });
-          }
         }
       })
       .finally(() => this.setLoading(false));

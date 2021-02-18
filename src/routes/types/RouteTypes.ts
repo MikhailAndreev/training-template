@@ -1,5 +1,5 @@
 import { RouteProps } from 'react-router-dom';
-import roles from '../routes/roles';
+import roles from '../roles';
 
 // Roles
 export interface IRole {

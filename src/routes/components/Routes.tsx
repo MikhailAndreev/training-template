@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
-import { Helmet } from 'react-helmet';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { SITE_NAME } from '../routes';
 
-import { IRole, IRoute, RoleKeys } from '../../types/RouteTypes';
+import { IRole, IRoute, RoleKeys } from '../types/RouteTypes';
+import PageTitle from './PageTitle';
 
 interface IRoutes {
   [key: string]: IRoute;
@@ -32,11 +31,7 @@ const Routes: FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
       if (Component) {
         return (
           <>
-            <Helmet>
-              <title>
-                {label} | {SITE_NAME}
-              </title>
-            </Helmet>
+            <PageTitle pageTitle={label} />
             <Component {...props} />
           </>
         );
