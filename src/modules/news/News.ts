@@ -1,4 +1,4 @@
-import BaseModel from '../../../base/BaseModel';
+import BaseModel from '../../base/BaseModel';
 
 export class NewsItem extends BaseModel {
   id: number | null = null;

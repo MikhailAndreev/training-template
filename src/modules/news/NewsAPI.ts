@@ -1,5 +1,5 @@
-import API from '../../services/ApiService';
-import { NewsItem } from './models/News';
+import API from '../api/service/ApiService';
+import { NewsItem } from './News';
 
 export default class NewsAPI {
   getAll = () => {

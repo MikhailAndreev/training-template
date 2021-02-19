@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { Settings } from 'luxon';
+// import { Settings } from 'luxon';
 import { configure } from 'mobx';
 import { Router } from 'react-router-dom';
 // import * as Sentry from '@sentry/browser';
@@ -13,7 +13,7 @@ import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { theme } from './styles/MuiTheme';
 
 // Установка локализации по умолчанию - Luxon
-Settings.defaultLocale = 'ru';
+// Settings.defaultLocale = 'ru';
 
 // StrictMode для Mobx
 configure({ enforceActions: 'observed' });

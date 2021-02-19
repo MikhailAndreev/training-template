@@ -1,6 +1,6 @@
-import { NewsItem } from '../models/News';
-import NewsAPI from '../NewsAPI';
-import { NewsFactory } from '../factories/NewsFactory';
+import { NewsItem } from './News';
+import NewsAPI from './NewsAPI';
+import { NewsFactory } from './NewsFactory';
 
 export default class NewsService {
   newsAPI: NewsAPI;

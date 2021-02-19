@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { observer, useLocalStore } from 'mobx-react-lite';
 import { Box, Container, Typography } from '@material-ui/core';
 
-import { NewsStore } from '../stores/NewsStore';
+import { NewsStore } from '../NewsStore';
 import Loader from '../../../components/UI/Loader';
 import PageTitle from '../../../routes/components/PageTitle';
 

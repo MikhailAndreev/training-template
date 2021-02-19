@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 
-import { NewsItem } from '../models/News';
-import { Nullable } from '../../../types/CommonTypes';
-import NewsService from '../services/NewsService';
+import { NewsItem } from './News';
+import { Nullable } from '../../types/CommonTypes';
+import NewsService from './NewsService';
 
 export class NewsStore {
   loading = false;

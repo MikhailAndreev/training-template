@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import { observer, useLocalStore } from 'mobx-react-lite';
 
-import { NewsStore } from '../stores/NewsStore';
+import { NewsStore } from '../NewsStore';
 import NewsCard from '../components/NewsCard';
 import Loader from '../../../components/UI/Loader';
 
