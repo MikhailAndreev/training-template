@@ -1,14 +1,14 @@
 import { makeAutoObservable } from 'mobx';
+import { News } from './models/News';
+import { Nullable } from '../../types/CommonTypes';
+import NewsService from './NewsService';
 
-import { NewsItem } from '../models/News';
-import { Nullable } from '../../../types/CommonTypes';
-import NewsService from '../services/NewsService';
 
 export class NewsStore {
   loading = false;
 
-  newsList: NewsItem[] = [];
-  newsData: Nullable<NewsItem> = null;
+  newsList: News[] = [];
+  newsData: Nullable<News> = null;
 
   private newsService: NewsService;
 

@@ -1,6 +1,6 @@
-import BaseModel from '../../../base/BaseModel';
+import AbstractModel from '../../../base/AbstractModel';
 
-export class NewsItem extends BaseModel {
+export class News extends AbstractModel {
   id: number | null = null;
   userId: number | null = null;
   title: string | null = null;

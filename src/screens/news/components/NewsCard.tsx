@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import { routes } from '../../../routes/routes';
 import { makePath } from '../../../routes/utils/makePath';
 import { useCommonStyles } from '../../../styles/CommonStyles';
-import { NewsItem } from '../models/News';
+import { News } from '../../../modules/news/models/News';
 
 interface INewsCardProps {
-  data: NewsItem;
+  data: News;
 }
 
 const NewsCard: React.FC<INewsCardProps> = ({ data }) => {
