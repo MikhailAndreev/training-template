@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { appConfig } from '../appConfig';
 import NotificationService from './NotificationService';
 
@@ -6,7 +6,7 @@ const api = axios.create();
 
 api.defaults.baseURL = process.env.NODE_ENV === 'production' ? appConfig.apiUrl.prod : appConfig.apiUrl.dev;
 
-if (!appConfig.apiUrl.prod) {
+if (process.env.NODE_ENV === 'production' && !appConfig.apiUrl.prod) {
   console.error('env.REACT_APP_API_URL - api url is not found!');
 }
 
@@ -47,11 +47,11 @@ interface IConfig {
   config?: AxiosRequestConfig;
 }
 
-// export interface IResponseCommon {
+// export interface IResponseCommon<T> {
 //   success: boolean;
 //   errors: [] | null;
 //   message: string | null;
-//   data: any;
+//   data: T;
 // }
 
 class ApiService {

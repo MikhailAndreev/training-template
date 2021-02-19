@@ -1,7 +1,7 @@
 import { Button, ButtonProps, useTheme } from '@material-ui/core';
 
 import Loader from './Loader';
-import { showNotification } from '../../utils/showNotification';
+import NotificationService from '../../services/NotificationService';
 
 interface ILoaderButtonProps extends ButtonProps {
   loading: boolean;
@@ -13,7 +13,7 @@ const LoaderButton: React.FC<ILoaderButtonProps> = props => {
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (onClick) {
-      return loading ? showNotification('danger', 'Идёт загрузка, пожалуйста подождите...') : onClick(e);
+      return loading ? NotificationService.showError('Идёт загрузка, пожалуйста подождите...') : onClick(e);
     }
   };
 

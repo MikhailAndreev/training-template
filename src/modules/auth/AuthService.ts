@@ -4,6 +4,8 @@ import { TokenStore } from './stores/TokenStore';
 import API from '../../services/ApiService';
 import TokenStorageService from '../../services/TokenStorageService';
 import NotificationService from '../../services/NotificationService';
+import RouteService from '../../routes/service/RouteService';
+import { routes } from '../../routes/routes';
 
 export default class AuthService {
   authAPI: AuthAPI;
@@ -22,9 +24,7 @@ export default class AuthService {
 
       if (token) {
         this.tokenStore.setToken(token);
-
-        // Redirect
-        // history.push('/');
+        RouteService.push(routes.MainScreen.path);
       }
     }
 
@@ -39,9 +39,7 @@ export default class AuthService {
 
       if (token) {
         this.tokenStore.setToken(token);
-
-        // Redirect
-        // history.push('/');
+        RouteService.push(routes.MainScreen.path);
       }
     }
 
@@ -55,8 +53,7 @@ export default class AuthService {
       API.clearAccessToken();
       TokenStorageService.deleteToken();
 
-      // Redirect
-      // history.push('/');
+      RouteService.push(routes.MainScreen.path);
 
       if (res.data?.message) {
         NotificationService.showNotif({ type: 'success', message: res.data.message });

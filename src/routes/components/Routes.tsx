@@ -1,8 +1,7 @@
-import React, { FC } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { IRole, IRoute, RoleKeys } from '../types/RouteTypes';
 import PageTitle from './PageTitle';
+import { IRole, IRoute, RoleKeys } from '../types/RouteTypes';
 
 interface IRoutes {
   [key: string]: IRoute;
@@ -21,7 +20,7 @@ const isSatisfied = (role: RoleKeys, credentials: IRole[]): boolean => {
   return mappedCredentials.includes(role);
 };
 
-const Routes: FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
+const Routes: React.FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
   const routesArray = Object.values(routes);
 
   const renderRouteChildren = (route: IRoute) => {
@@ -36,6 +35,7 @@ const Routes: FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
           </>
         );
       }
+
       return <></>;
     };
 
@@ -47,7 +47,7 @@ const Routes: FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
       return renderRouteComponent();
     }
 
-    return <Redirect to="/not-found" />;
+    return <Redirect to={routes.NotFoundScreen.path} />;
   };
 
   return (
@@ -65,7 +65,7 @@ const Routes: FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
 
         {!disableRedirect && (
           <Route path="*">
-            <Redirect to="/not-found" />
+            <Redirect to={routes.NotFoundScreen.path} />
           </Route>
         )}
       </Switch>

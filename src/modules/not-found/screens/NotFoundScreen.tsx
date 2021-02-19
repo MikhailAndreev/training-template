@@ -1,9 +1,9 @@
-import { FC } from 'react';
 import { Box, Button, Container, Typography } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { Link } from 'react-router-dom';
+import { routes } from '../../../routes/routes';
 
-const NotFoundScreen: FC = () => {
+const NotFoundScreen: React.FC = () => {
   return (
     <Container maxWidth="xl">
       <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" py={8}>
@@ -14,7 +14,7 @@ const NotFoundScreen: FC = () => {
           <Typography>Страница не найдена</Typography>
         </Box>
 
-        <Link to="/" className="router-link">
+        <Link to={routes.MainScreen.path} className="router-link">
           <Button variant="outlined" color="primary" startIcon={<ArrowBackIcon />}>
             На главную
           </Button>

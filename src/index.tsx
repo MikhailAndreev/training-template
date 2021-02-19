@@ -2,11 +2,13 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Settings } from 'luxon';
 import { configure } from 'mobx';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 // import * as Sentry from '@sentry/browser';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import history from './routes/history';
+
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { theme } from './styles/MuiTheme';
 
@@ -25,7 +27,7 @@ ReactDOM.render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router history={history}>
         <App />
       </Router>
     </ThemeProvider>

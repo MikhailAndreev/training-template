@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { Box, Container, Typography } from '@material-ui/core';
+import { useParams } from 'react-router-dom';
 import { observer, useLocalStore } from 'mobx-react-lite';
+import { Box, Container, Typography } from '@material-ui/core';
 
 import { NewsStore } from '../NewsStore';
-import { useParams } from 'react-router-dom';
 import Loader from '../../../components/UI/Loader';
 import PageTitle from '../../../routes/components/PageTitle';
 

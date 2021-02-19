@@ -13,7 +13,7 @@ export default class NewsService {
 
   getAll = async (): Promise<NewsItem[]> => {
     const { data } = await this.newsAPI.getAll();
-    return this.newsFactory.createList(data).slice(0, 12);
+    return this.newsFactory.createList(data).slice(0, 12); // cut list for demo
   };
 
   get = async (id: number): Promise<NewsItem> => {
