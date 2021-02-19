@@ -1,4 +1,4 @@
-import { NewsItem } from './News';
+import { NewsItem } from '../models/News';
 
 export class NewsFactory {
   create(data: any): NewsItem {
