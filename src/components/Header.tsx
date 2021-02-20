@@ -1,6 +1,6 @@
 import { AppBar, Box, Container, makeStyles, Theme, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import { routes } from '../routes/routes';
+import { routes } from '../screens/routes';
 
 const Header: React.FC = () => {
   const classes = useStyles();

@@ -2,13 +2,13 @@ import { Box, Grid, makeStyles, Paper, Typography, Theme } from '@material-ui/co
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 import { Link } from 'react-router-dom';
 
-import { routes } from '../../../routes/routes';
-import { makePath } from '../../../routes/utils/makePath';
+import { routes } from '../../routes';
+import { makePath } from '../../../base/routes/utils/makePath';
 import { useCommonStyles } from '../../../styles/CommonStyles';
-import { NewsItem } from '../News';
+import { News } from '../../../modules/news/models/News';
 
 interface INewsCardProps {
-  data: NewsItem;
+  data: News;
 }
 
 const NewsCard: React.FC<INewsCardProps> = ({ data }) => {

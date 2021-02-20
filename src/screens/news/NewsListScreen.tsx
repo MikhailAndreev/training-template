@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import { observer, useLocalStore } from 'mobx-react-lite';
-
-import { NewsStore } from '../NewsStore';
-import NewsCard from '../components/NewsCard';
-import Loader from '../../../components/UI/Loader';
+import { NewsStore } from '../../modules/news/NewsStore';
+import Loader from '../../components/UI/Loader';
+import NewsCard from './components/NewsCard';
 
 const NewsListScreen: React.FC = observer(() => {
   const store = useLocalStore(() => new NewsStore());

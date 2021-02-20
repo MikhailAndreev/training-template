@@ -1,23 +1,23 @@
-import { NewsItem } from './News';
-import NewsAPI from './NewsAPI';
+import NewsApiRepository from './repositories/NewsApiRepository';
 import { NewsFactory } from './NewsFactory';
+import { News } from './models/News';
 
 export default class NewsService {
-  newsAPI: NewsAPI;
+  newsAPI: NewsApiRepository;
   newsFactory: NewsFactory;
 
   constructor() {
-    this.newsAPI = new NewsAPI();
+    this.newsAPI = new NewsApiRepository();
     this.newsFactory = new NewsFactory();
   }
 
-  getAll = async (): Promise<NewsItem[]> => {
+  getAll = async (): Promise<News[]> => {
     const { data } = await this.newsAPI.getAll();
-    return this.newsFactory.createList(data).slice(0, 12); // cut list for demo
+    return this.newsFactory.createList<News>(News, data).slice(0, 12); // cut list for demo
   };
 
-  get = async (id: number): Promise<NewsItem> => {
-    const { data } = await this.newsAPI.get(id);
-    return this.newsFactory.create(data);
+  getOne = async (id: number): Promise<News> => {
+    const { data } = await this.newsAPI.getOne(id);
+    return this.newsFactory.create<News>(News, data);
   };
 }

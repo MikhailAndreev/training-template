@@ -1,14 +1,13 @@
 import { makeAutoObservable } from 'mobx';
-
-import { NewsItem } from './News';
-import { Nullable } from '../../types/CommonTypes';
 import NewsService from './NewsService';
+import { News } from './models/News';
+import { Nullable } from '../../base/types/BaseTypes';
 
 export class NewsStore {
   loading = false;
 
-  newsList: NewsItem[] = [];
-  newsData: Nullable<NewsItem> = null;
+  newsList: News[] = [];
+  newsData: Nullable<News> = null;
 
   private newsService: NewsService;
 
@@ -28,11 +27,11 @@ export class NewsStore {
       .finally(() => this.setLoading(false));
   };
 
-  get = (newsId: number) => {
+  getOne = (newsId: number) => {
     this.setLoading(true);
 
     this.newsService
-      .get(newsId)
+      .getOne(newsId)
       .then(data => {
         this.newsData = data;
       })

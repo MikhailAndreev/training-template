@@ -1,10 +1,10 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
-import { appConfig } from '../../appConfig';
-import Notification from '../../helpers/Notification';
+import { appConfig } from '../appConfig';
+import Notification from '../helpers/Notification';
 
-const api = axios.create();
+export const api = axios.create();
 
-api.defaults.baseURL = process.env.NODE_ENV === 'production' ? appConfig.apiUrl.prod : appConfig.apiUrl.dev;
+api.defaults.baseURL = process.env.NODE_ENV !== 'production' ? appConfig.apiUrl.dev : appConfig.apiUrl.prod;
 
 if (process.env.NODE_ENV === 'production' && !appConfig.apiUrl.prod) {
   console.error('env.REACT_APP_API_URL - api url is not found!');
@@ -16,11 +16,10 @@ api.interceptors.request.use(
       ...config,
       headers: {
         'Content-Type': 'application/json',
-        'App-Platform': 'web', // required
+        'App-Platform': 'web',
         ...config.headers,
       },
     };
-
     return newConfig;
   },
   (error: AxiosError) => {
@@ -42,4 +41,23 @@ api.interceptors.response.use(
   },
 );
 
-export default api;
+export const setAccessToken = (token: string) => {
+  axios.defaults.headers['Access-Token'] = token;
+};
+
+export const clearAccessToken = () => {
+  axios.defaults.headers['Access-Token'] = null;
+};
+
+export interface IConfig {
+  url: string;
+  data?: Object;
+  config?: AxiosRequestConfig;
+}
+
+// export interface IResponseCommon<T> {
+//   success: boolean;
+//   errors: [] | null;
+//   message: string | null;
+//   data: T;
+// }

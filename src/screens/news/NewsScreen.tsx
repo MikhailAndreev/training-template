@@ -2,17 +2,16 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { observer, useLocalStore } from 'mobx-react-lite';
 import { Box, Container, Typography } from '@material-ui/core';
-
-import { NewsStore } from '../NewsStore';
-import Loader from '../../../components/UI/Loader';
-import PageTitle from '../../../routes/components/PageTitle';
+import { NewsStore } from '../../modules/news/NewsStore';
+import PageTitle from '../../base/routes/components/PageTitle';
+import Loader from '../../components/UI/Loader';
 
 const NewsListScreen: React.FC = observer(() => {
   const store = useLocalStore(() => new NewsStore());
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    store.get(Number(id));
+    store.getOne(Number(id));
   }, [id, store]);
 
   const renderContent = () => {

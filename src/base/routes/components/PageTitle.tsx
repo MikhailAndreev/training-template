@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
-import { appConfig } from '../../appConfig';
-import { Nullable } from '../../types/CommonTypes';
+import { appConfig } from '../../../appConfig';
+import { Nullable } from '../../types/BaseTypes';
 
 interface IPageTitleProps {
   pageTitle: Nullable<string>;

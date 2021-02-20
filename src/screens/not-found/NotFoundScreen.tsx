@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import { Box, Button, Container, Typography } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { Link } from 'react-router-dom';
-import { routes } from '../../../routes/routes';
+
+import { routes } from '../routes';
 
 const NotFoundScreen: React.FC = () => {
   return (

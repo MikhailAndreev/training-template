@@ -7,7 +7,7 @@ import { Router } from 'react-router-dom';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import history from './routes/history';
+import history from './base/routes/history';
 
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { theme } from './styles/MuiTheme';

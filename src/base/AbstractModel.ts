@@ -1,4 +1,4 @@
-export default abstract class BaseModel {
+export default abstract class AbstractModel {
   getAttributes() {
     return Object.keys(this);
   }

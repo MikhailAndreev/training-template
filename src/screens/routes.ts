@@ -1,8 +1,8 @@
-import { RoutesType } from './types/RouteTypes';
-import MainScreen from '../modules/main/screens/MainScreen';
-import NotFoundScreen from '../modules/not-found/screens/NotFoundScreen';
-import NewsListScreen from '../modules/news/screens/NewsListScreen';
-import NewsScreen from '../modules/news/screens/NewsScreen';
+import { RoutesType } from '../base/routes/types/RouteTypes';
+import MainScreen from './main/MainScreen';
+import NotFoundScreen from './not-found/NotFoundScreen';
+import NewsListScreen from './news/NewsListScreen';
+import NewsScreen from './news/NewsScreen';
 
 const screens = { MainScreen, NotFoundScreen, NewsListScreen, NewsScreen };
 
