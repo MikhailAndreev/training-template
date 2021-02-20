@@ -1,7 +1,7 @@
 import { Button, ButtonProps, useTheme } from '@material-ui/core';
 
 import Loader from './Loader';
-import Notification from '../../helpers/Notification';
+import Notification from '../../utils/NotificationUtil';
 
 interface ILoaderButtonProps extends ButtonProps {
   loading: boolean;

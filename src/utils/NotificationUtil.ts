@@ -7,7 +7,7 @@ interface INotificationProps {
   duration?: number;
 }
 
-class NotificationHelper {
+class NotificationUtilC {
   addNotification = (options: ReactNotificationOptions) => {
     const { type, message, container, dismiss, slidingExit, ...rest } = options;
 
@@ -51,5 +51,5 @@ class NotificationHelper {
   };
 }
 
-const Notification = new NotificationHelper();
-export default Notification;
+const NotificationUtil = new NotificationUtilC();
+export default NotificationUtil;

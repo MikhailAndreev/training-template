@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { appConfig } from '../appConfig';
-import Notification from '../helpers/Notification';
+import Notification from '../utils/NotificationUtil';
 
 export const api = axios.create();
 
