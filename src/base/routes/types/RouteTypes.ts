@@ -13,7 +13,7 @@ export type Roles = Record<RoleKeys, IRole>;
 export type RoutesType<T extends string> = Record<T, IRoute>;
 export interface IRoute extends RouteProps {
   path: string;
-  label: string;
+  title: string;
   credentials?: IRole[];
   props?: any;
 }

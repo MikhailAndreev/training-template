@@ -13,12 +13,12 @@ const Header: React.FC = () => {
             <ul className={classes.menu}>
               <li className={classes.menuItem}>
                 <Link to={routes.MainScreen.path}>
-                  <Typography>{routes.MainScreen.label}</Typography>
+                  <Typography>{routes.MainScreen.title}</Typography>
                 </Link>
               </li>
               <li className={classes.menuItem}>
                 <Link to={routes.NewsListScreen.path}>
-                  <Typography>{routes.NewsListScreen.label}</Typography>
+                  <Typography>{routes.NewsListScreen.title}</Typography>
                 </Link>
               </li>
             </ul>

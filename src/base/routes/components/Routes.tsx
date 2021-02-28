@@ -24,13 +24,13 @@ const Routes: React.FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
   const routesArray = Object.values(routes);
 
   const renderRouteChildren = (route: IRoute) => {
-    const { credentials, label, component: Component, props } = route;
+    const { credentials, title, component: Component, props } = route;
 
     const renderRouteComponent = () => {
       if (Component) {
         return (
           <>
-            <PageTitle pageTitle={label} />
+            <PageTitle pageTitle={title} />
             <Component {...props} />
           </>
         );
@@ -54,7 +54,7 @@ const Routes: React.FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
     <main>
       <Switch>
         {routesArray.map(route => {
-          const { component: Component, path, label, credentials, props, ...rest } = route;
+          const { component, path, title, credentials, props, ...rest } = route;
 
           return (
             <Route key={path} path={path} {...rest}>

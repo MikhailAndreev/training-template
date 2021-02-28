@@ -11,23 +11,24 @@ export const routes: RoutesType<RoutesKeys> = {
   MainScreen: {
     path: '/',
     exact: true,
-    label: 'Главная',
+    title: 'Главная',
     component: screens.MainScreen,
+    // credentials: [roles.director],
   },
   NewsListScreen: {
     path: '/news',
     exact: true,
-    label: 'Новости',
+    title: 'Новости',
     component: screens.NewsListScreen,
   },
   NewsScreen: {
     path: '/news/:id',
-    label: 'Новости',
+    title: 'Новости',
     component: screens.NewsScreen,
   },
   NotFoundScreen: {
     path: '/not-found',
-    label: '404 Страница не найдена',
+    title: '404 Страница не найдена',
     component: screens.NotFoundScreen,
   },
 };
