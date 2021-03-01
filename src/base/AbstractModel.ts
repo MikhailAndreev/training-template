@@ -4,12 +4,11 @@ export default abstract class AbstractModel {
   }
 
   load(data: any) {
-    this.getAttributes().map(attribute => {
+    this.getAttributes().forEach(attribute => {
       if (data && data.hasOwnProperty(attribute)) {
         // @ts-ignore
         this[attribute] = data[attribute];
       }
-      return null;
     });
   }
 }

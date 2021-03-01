@@ -24,6 +24,7 @@ export class NewsStore {
       .then(list => {
         this.newsList = list;
       })
+      .catch(error => {})
       .finally(() => this.setLoading(false));
   };
 
@@ -35,6 +36,7 @@ export class NewsStore {
       .then(data => {
         this.newsData = data;
       })
+      .catch(error => {})
       .finally(() => this.setLoading(false));
   };
 

@@ -38,7 +38,7 @@ api.interceptors.response.use(
       return Promise.reject(response);
     }
 
-    if (response?.data?.message.trim()) {
+    if (response?.data?.message?.trim()) {
       Notification.showSuccess(response?.data?.message);
     }
 
