@@ -49,6 +49,10 @@ class NotificationUtilC {
   showError = (errorMessage: string) => {
     this.showNotif({ type: 'danger', message: errorMessage });
   };
+
+  showSuccess = (successMessage: string) => {
+    this.showNotif({ type: 'success', message: successMessage });
+  };
 }
 
 const NotificationUtil = new NotificationUtilC();

@@ -4,6 +4,9 @@ import Notification from '../utils/NotificationUtil';
 
 export const api = axios.create();
 
+// statuses
+const success = [200, 201];
+
 api.defaults.baseURL = process.env.NODE_ENV !== 'production' ? appConfig.apiUrl.dev : appConfig.apiUrl.prod;
 
 if (process.env.NODE_ENV === 'production' && !appConfig.apiUrl.prod) {
@@ -29,6 +32,16 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   response => {
+    if (!success.includes(response.status)) {
+      Notification.showError(response.data?.message || 'Неизвестная ошибка');
+
+      return Promise.reject(response);
+    }
+
+    if (response?.data?.message.trim()) {
+      Notification.showSuccess(response?.data?.message);
+    }
+
     return response;
   },
   error => {
