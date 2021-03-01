@@ -68,9 +68,11 @@ export interface IConfig {
   config?: AxiosRequestConfig;
 }
 
-// export interface IResponseCommon<T> {
-//   success: boolean;
-//   errors: [] | null;
-//   message: string | null;
-//   data: T;
-// }
+export interface IResponseCommon<T> {
+  success: boolean;
+  errors: {
+    [key: string]: string[];
+  } | null;
+  message: string | null;
+  data: T;
+}
