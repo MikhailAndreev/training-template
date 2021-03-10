@@ -1,15 +1,14 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-// import { Settings } from 'luxon';
 import { configure } from 'mobx';
 import { Router } from 'react-router-dom';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
+// import { Settings } from 'luxon';
 // import * as Sentry from '@sentry/browser';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import history from './base/routes/history';
-
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { theme } from './styles/MuiTheme';
 
 // Установка локализации по умолчанию - Luxon

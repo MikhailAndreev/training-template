@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx';
+
 import NewsService from './NewsService';
 import { News } from './models/News';
 import { Nullable } from '../../base/types/BaseTypes';

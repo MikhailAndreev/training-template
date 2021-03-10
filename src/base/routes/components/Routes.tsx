@@ -1,7 +1,7 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import PageTitle from './PageTitle';
 import { IRole, IRoute, RoleKeys } from '../types/RouteTypes';
+import PageTitle from './PageTitle';
 
 interface IRoutes {
   [key: string]: IRoute;

@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+
 import { appConfig } from '../appConfig';
 import Notification from '../utils/NotificationUtil';
 
