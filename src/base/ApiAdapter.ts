@@ -56,11 +56,11 @@ api.interceptors.response.use(
 );
 
 export const setAccessToken = (token: string) => {
-  axios.defaults.headers['Access-Token'] = token;
+  api.defaults.headers['Access-Token'] = token;
 };
 
 export const clearAccessToken = () => {
-  axios.defaults.headers['Access-Token'] = null;
+  api.defaults.headers['Access-Token'] = null;
 };
 
 export interface IConfig {
