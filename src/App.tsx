@@ -13,7 +13,7 @@ const App: React.FC = observer(() => {
   const [profileLoading, setProfileLoading] = useState(true);
 
   useEffect(() => {
-    // Demo: waiting get user data !!!!!
+    // Demo: waiting get user data !!!!! !!!!
     setTimeout(() => {
       setProfileLoading(false);
     }, 400);
