@@ -3,8 +3,9 @@ import MainScreen from './main/MainScreen';
 import NotFoundScreen from './not-found/NotFoundScreen';
 import NewsListScreen from './news/NewsListScreen';
 import NewsScreen from './news/NewsScreen';
+import DesignPreviewScreen from './design/DesignPreviewScreen';
 
-const screens = { MainScreen, NotFoundScreen, NewsListScreen, NewsScreen };
+const screens = { MainScreen, NotFoundScreen, NewsListScreen, NewsScreen, DesignPreviewScreen };
 
 type RoutesKeys = keyof typeof screens;
 export const routes: RoutesType<RoutesKeys> = {
@@ -20,6 +21,12 @@ export const routes: RoutesType<RoutesKeys> = {
     exact: true,
     title: 'Новости',
     component: screens.NewsListScreen,
+  },
+  DesignPreviewScreen: {
+    path: '/design',
+    exact: true,
+    title: 'Дизайн',
+    component: screens.DesignPreviewScreen,
   },
   NewsScreen: {
     path: '/news/:id',

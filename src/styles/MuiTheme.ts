@@ -38,18 +38,61 @@ export const theme = createMuiTheme({
   //     },
   //     error: { main: '' },
   //   },
-  //   typography: {
-  //     fontFamily: "'Ubuntu', sans-serif",
-  //     h1: {},
-  //     h2: {},
-  //     h3: {},
-  //     h4: {},
-  //     h5: {},
-  //     body1: {},
-  //     body2: {},
-  //     button: {},
-  //     caption: {},
-  //   },
+  typography: {
+    fontFamily: "'Ubuntu', sans-serif",
+    h1: {
+      fontWeight: 300,
+      fontSize: 40,
+      lineHeight: '52px',
+      letterSpacing: '-0.01em',
+    },
+    h2: {
+      fontWeight: 500,
+      fontSize: 28,
+      lineHeight: '38px',
+      letterSpacing: '-0.01em',
+    },
+    h3: {
+      fontWeight: 300,
+      fontSize: 24,
+      lineHeight: '32px',
+      letterSpacing: '-0.01em',
+    },
+    h4: {
+      fontWeight: 500,
+      fontSize: 20,
+      lineHeight: '28px',
+      letterSpacing: '-0.01em',
+    },
+    h5: {
+      fontWeight: 400,
+      fontSize: 18,
+      lineHeight: '26px',
+      letterSpacing: '-0.01em',
+    },
+    body1: {
+      fontWeight: 400,
+      fontSize: 15,
+      lineHeight: '24px',
+    },
+    body2: {
+      fontWeight: 500,
+      fontSize: 15,
+      lineHeight: '24px',
+    },
+    button: {
+      fontWeight: 500,
+      fontSize: 13,
+      lineHeight: '16px',
+      letterSpacing: '0.07em',
+      textTransform: 'uppercase',
+    },
+    caption: {
+      fontWeight: 400,
+      fontSize: 13,
+      lineHeight: '16px',
+    },
+  },
   overrides: {
     MuiCssBaseline: {
       '@global': {
