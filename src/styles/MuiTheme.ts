@@ -12,32 +12,32 @@ export const theme = createMuiTheme({
       xl: 1208 + 48,
     },
   },
-  //   palette: {
-  //     primary: { main: '' },
-  //     secondary: { main: '' },
-  //     prim: {
-  //       50: '',
-  //       100: '',
-  //       200: '',
-  //       300: '',
-  //       400: '',
-  //       500: '',
-  //       600: '',
-  //       700: '',
-  //       800: '',
-  //       900: '',
-  //     },
-  //     surface: {
-  //       HighEmphasis: '',
-  //       MediumEmphasis: '',
-  //       LowEmphasis: '',
-  //       Background: '',
-  //       Stroke: '',
-  //       Filled: '',
-  //       Disabled: '',
-  //     },
-  //     error: { main: '' },
-  //   },
+  palette: {
+    primary: { main: '#18A6F5' },
+    secondary: { main: '#939CAB' }, // посмотрел в ЦДС
+    prim: {
+      50: '#F6FAFC',
+      100: '', // ?????
+      200: '',
+      300: '',
+      400: '#3BB3F7',
+      500: '18A6F5',
+      600: '#159EF4',
+      700: '',
+      800: '',
+      900: '',
+    },
+    surface: {
+      HighEmphasis: '#001333',
+      MediumEmphasis: '#3B4961',
+      LowEmphasis: '#939CAB',
+      Background: 'F6FAFC', // посмотрел в ЦДС
+      Stroke: '#C9DEE8',
+      Filled: '#B4C8D1',
+      Disabled: '#C2C6CB',
+    },
+    error: { main: '#ED2D23' },
+  },
   typography: {
     fontFamily: "'Ubuntu', sans-serif",
     h1: {
