@@ -17,9 +17,16 @@ const Header: React.FC = () => {
                   <Typography>{routes.MainScreen.title}</Typography>
                 </Link>
               </li>
+
               <li className={classes.menuItem}>
                 <Link to={routes.NewsListScreen.path}>
                   <Typography>{routes.NewsListScreen.title}</Typography>
+                </Link>
+              </li>
+
+              <li className={classes.menuItem}>
+                <Link to={routes.UsersListScreen.path}>
+                  <Typography>{routes.UsersListScreen.title}</Typography>
                 </Link>
               </li>
             </ul>

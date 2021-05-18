@@ -4,8 +4,18 @@ import NotFoundScreen from './not-found/NotFoundScreen';
 import NewsListScreen from './news/NewsListScreen';
 import NewsScreen from './news/NewsScreen';
 import DesignPreviewScreen from './design/DesignPreviewScreen';
+import UsersListScreen from './usersList/UsersListScreen';
+import UserScreen from './usersList/UserScreen';
 
-const screens = { MainScreen, NotFoundScreen, NewsListScreen, NewsScreen, DesignPreviewScreen };
+const screens = {
+  MainScreen,
+  NotFoundScreen,
+  NewsListScreen,
+  NewsScreen,
+  DesignPreviewScreen,
+  UsersListScreen,
+  UserScreen,
+};
 
 type RoutesKeys = keyof typeof screens;
 export const routes: RoutesType<RoutesKeys> = {
@@ -22,16 +32,28 @@ export const routes: RoutesType<RoutesKeys> = {
     title: 'Новости',
     component: screens.NewsListScreen,
   },
+  NewsScreen: {
+    path: '/news/:id',
+    title: 'Новости',
+    component: screens.NewsScreen,
+  },
   DesignPreviewScreen: {
     path: '/design',
     exact: true,
     title: 'Дизайн',
     component: screens.DesignPreviewScreen,
   },
-  NewsScreen: {
-    path: '/news/:id',
-    title: 'Новости',
-    component: screens.NewsScreen,
+  UsersListScreen: {
+    path: '/usersList',
+    exact: true,
+    title: 'Пользователи',
+    component: screens.UsersListScreen,
+  },
+  UserScreen: {
+    path: '/usersList/:id',
+    exact: true,
+    title: 'Пользователь',
+    component: screens.UserScreen,
   },
   NotFoundScreen: {
     path: '/not-found',
